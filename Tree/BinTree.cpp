@@ -51,3 +51,55 @@ BinNodePosi(T) BinTree<T>::attachAsLC(BinNodePosi(T) x, BinTree<T>* &s) {
 	s = NULL;
 	return x;
 }
+
+template <typename T>
+BinNodePosi(T) BinTree<T>::attachAsRC(BinNodePosi(T) x, BinTree<T>* &s) {
+	if (x->rChild = s->root) {
+		x->rChild->parent = x;
+	}
+	_size += x->rChild->size;
+	updateHeightAbove(s);
+
+	s->root = NULL;
+	s->size = 0;
+	s = NULL;
+	return x;
+}
+
+template <typename T>
+int BinTree<T>::remove(BinNodePosi(T) x) {
+	FromParentTo(*x) = NULL;
+	updateHeight(x->parent);
+	int n = removeAt(x);
+	_size -= n;
+	return n;
+}
+
+template <typename T>
+static int removeAt(BinNodePosi(T) x) {
+	if (!x) return 0;
+
+	int n = 1 + removeAt(x->lChild) + removeAt(x->rChild);
+	release(x->data);
+	release(x);
+	return n;
+}
+
+template <typename T>
+BinTree<T>* BinTree<T>::secede(BinNodePosi(T) x) {
+	FromParentTo(*x) = NULL;
+	updateHeightAbove(x->parent);
+	BinTree<T>* S = new BinTree();
+	S->root = x;
+	x->parent = NULL;
+	return S;
+}
+
+template <typename T, typename VST>
+void travPre_R(BinNodePosi(T) x, VST& visit) {
+	if (!x) return;
+
+	visit(x);
+	travPre_R(x->lChild);
+	travPre_R(x->rChild);
+}

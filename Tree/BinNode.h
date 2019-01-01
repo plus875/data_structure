@@ -58,5 +58,5 @@ template <typename T> struct BinNode
    IsLChild(*((x)->parent)) ? (x)->parent->parent->rChild : (x)->parent->parent->lChild) //叔叔
 
 #define FromParentTo(x) ( \
-   IsRoot(x) ? _root : ( IsLChild(x) ? (x).parent->lChild : (x).parent->rChild)) //来自父亲癿指针
+   IsRoot(x) ? _root : ( IsLChild(x) ? (x).parent->lChild : (x).parent->rChild)) //来自父亲的指针
 };
