@@ -103,3 +103,42 @@ void travPre_R(BinNodePosi(T) x, VST& visit) {
 	travPre_R(x->lChild);
 	travPre_R(x->rChild);
 }
+
+template <typename T, typename VST>
+void travPost_R(BinNodePosi(T) x, VST& visit) {
+	if (!x) return;
+
+	travPost_R(x->lChild)
+	travPost_R(x->rChild);
+	visit(x->data);
+}
+
+template <typename T, typename VST>
+void travIn_R(BinNodePosi(T) x, VST& visit) {
+	if (!x) return;
+
+	travIn_R(x->lChild);
+	visit(x->data);
+	travIn_R(x->rChild);
+}
+
+template <typename T, typename VST>
+static void visitAlongLeftBranch(BinNodePosi(T) x, VST& visit, stack<BinNodePosi(T)>& S) {
+	while (x)
+	{
+		visit(x->data);
+		S.push(x->rChild);
+		x = x->lChild;
+	}
+}
+
+template <typename T, typename VST>
+static void travPre_I2(BinNodePosi(T) x, VST& visit) {
+	stack<BinNodePosi(T)> stack;
+	while (true)
+	{
+		visitAlongLeftBranch(x, visit, stack);
+		if (stack.empty()) break;
+		x = stack.pop();
+	}
+}
