@@ -123,6 +123,7 @@ public class Gernerater : MonoBehaviour
             }
             if (end)
             {
+                DrawResult();
                 break;
             }
 
@@ -175,9 +176,13 @@ public class Gernerater : MonoBehaviour
 
             _openList.Sort();
             _closeList.Add(curTile);
+
+            if (_openList.Count == 0)
+            {
+                Debug.LogWarning("Can not Find");
+            }
         }
 
-        DrawResult();
     }
 
     private void Reset()
