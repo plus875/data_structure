@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AlorVs", "Alor\AlorVs.vcxpr
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tree", "Tree\Tree.vcxproj", "{90B8E944-392F-4339-B2F1-1B1D7F5DA9F7}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Dictionary", "Dictionary\Dictionary.vcxproj", "{1BB83F0F-A456-44CD-A87A-D9B5F8BA75E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{90B8E944-392F-4339-B2F1-1B1D7F5DA9F7}.Release|x64.Build.0 = Release|x64
 		{90B8E944-392F-4339-B2F1-1B1D7F5DA9F7}.Release|x86.ActiveCfg = Release|Win32
 		{90B8E944-392F-4339-B2F1-1B1D7F5DA9F7}.Release|x86.Build.0 = Release|Win32
+		{1BB83F0F-A456-44CD-A87A-D9B5F8BA75E3}.Debug|x64.ActiveCfg = Debug|x64
+		{1BB83F0F-A456-44CD-A87A-D9B5F8BA75E3}.Debug|x64.Build.0 = Debug|x64
+		{1BB83F0F-A456-44CD-A87A-D9B5F8BA75E3}.Debug|x86.ActiveCfg = Debug|Win32
+		{1BB83F0F-A456-44CD-A87A-D9B5F8BA75E3}.Debug|x86.Build.0 = Debug|Win32
+		{1BB83F0F-A456-44CD-A87A-D9B5F8BA75E3}.Release|x64.ActiveCfg = Release|x64
+		{1BB83F0F-A456-44CD-A87A-D9B5F8BA75E3}.Release|x64.Build.0 = Release|x64
+		{1BB83F0F-A456-44CD-A87A-D9B5F8BA75E3}.Release|x86.ActiveCfg = Release|Win32
+		{1BB83F0F-A456-44CD-A87A-D9B5F8BA75E3}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
