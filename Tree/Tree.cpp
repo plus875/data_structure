@@ -4,11 +4,35 @@
 #include "pch.h"
 #include <iostream>
 
+void bubbleSort(int* arr);
+
 int main()
 {
-    std::cout << "Hello World!\n"; 
+    std::cout << "Hello World!\n";
+	int arr[] = { 22, 34, 3, 32, 82, 55, 89, 50, 37, 5, 64, 35, 9, 70 };
+	bubbleSort(arr);
 }
 
+
+void bubbleSort(int* arr) {
+	//int len = sizeof(arr);
+	int len = 14;
+	printf("len:%d\n", len);
+	for (int i = 0; i < len; i++)
+	{
+		for (int j = 0; j < len - i - 1; j++)
+		{
+			if (arr[j] > arr[j + 1]) {
+				int temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+		}
+	}
+
+	for (int i = 0; i < len; i++)
+		printf(" %d ", arr[i]);
+}
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
 // 调试程序: F5 或调试 >“开始调试”菜单
 
