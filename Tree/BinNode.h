@@ -44,8 +44,8 @@ template <typename T> struct BinNode
 #define IsLChild(x) (IsRoot(x) && (x == x.parent->lChild))
 #define IsRChild(x) (IsRoot(x) && (x == x.parent->rChild))
 #define HasParent(x) (!IsRoot(x))
-#define HasLChild(x) (x.lChild != null)
-#define HasRChild(x) (x.rChild != null)
+#define HasLChild(x) (x->lChild != NULL)
+#define HasRChild(x) (x->rChild != NULL)
 
 #define HasChild(x) (HasLChild(x) || HasRChild(x))
 #define HasBothChild(x) (HasLChild(x) && HasRChild(x))

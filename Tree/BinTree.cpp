@@ -108,7 +108,7 @@ template <typename T, typename VST>
 void travPost_R(BinNodePosi(T) x, VST& visit) {
 	if (!x) return;
 
-	travPost_R(x->lChild)
+	travPost_R(x->lChild);
 	travPost_R(x->rChild);
 	visit(x->data);
 }
@@ -140,5 +140,31 @@ static void travPre_I2(BinNodePosi(T) x, VST& visit) {
 		visitAlongLeftBranch(x, visit, stack);
 		if (stack.empty()) break;
 		x = stack.pop();
+	}
+}
+
+template <typename T, typename VST>
+void travIn_I3(BinNodePosi(T) x, VST& visit)
+{
+	bool backtrack = false;
+	while (true)
+	{
+		if (!backtrack && HasLChild(*x))
+			x = x->lChild;
+		else
+		{
+			visit(x.data);
+			if(HasRChild(*x))
+			{
+				x = x.data;
+				backtrack = false;
+			}
+			else
+			{
+				if(!(x = x.succ()))
+					break;;
+				backtrack = true;
+			}
+		}
 	}
 }
