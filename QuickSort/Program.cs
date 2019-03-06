@@ -48,7 +48,7 @@ class Program
     static void Main(string[] args)
     {
         int[] arr = new int[] {4, 9, 8, 2, 3, 10};
-        
+        Sort(arr);
     }
 }
 
